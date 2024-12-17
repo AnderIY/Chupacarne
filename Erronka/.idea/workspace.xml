@@ -21,13 +21,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -41,6 +34,7 @@
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -86,7 +80,8 @@
       <workItem from="1733833040817" duration="7470000" />
       <workItem from="1733919329368" duration="6961000" />
       <workItem from="1734005795916" duration="1845000" />
-      <workItem from="1734353518123" duration="2905000" />
+      <workItem from="1734353518123" duration="3533000" />
+      <workItem from="1734437831379" duration="5591000" />
     </task>
     <servers />
   </component>
