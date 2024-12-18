@@ -7,20 +7,24 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.HelloController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.HelloController">
    <children>
-      <Button id="loginButton" fx:id="loginButton" layoutX="390.0" layoutY="301.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #A62940;" text="Saioa Hasi" />
-      <Label id="erabiltzaileaLabel" alignment="CENTER" layoutX="288.0" layoutY="157.0" prefHeight="26.0" prefWidth="85.0" style="-fx-text-fill: #B0D9BE; -fx-background-color: #081b26;" text="Erabitzaliea" />
-      <Label fx:id="welcomeText" layoutX="100" layoutY="100" />
-      <Label id="PasahitzaLabel" alignment="CENTER" layoutX="288.0" layoutY="228.0" prefHeight="26.0" prefWidth="85.0" style="-fx-text-fill: #B0D9BE; -fx-background-color: #081b26;" text="Pasahitza" />
-      <TextField fx:id="usernameField" layoutX="440.0" layoutY="157.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #B0D9BE;" />
-      <PasswordField fx:id="passwordField" layoutX="440.0" layoutY="228.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #B0D9BE;" />
-      <Label fx:id="statusLabel" alignment="CENTER" layoutX="290.0" layoutY="263.0" prefHeight="26.0" prefWidth="300.0" style="-fx-text-fill: red;" />
-      <ImageView fitHeight="200.0" fitWidth="200.0">
-         <image>
-            <Image url="@../../../img/logo.png" />
-         </image>
-      </ImageView>
+      <VBox alignment="CENTER" layoutX="536.0" layoutY="77.0" prefHeight="447.0" prefWidth="250.0" spacing="20">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="150.0">
+               <image>
+                  <Image url="@../../../img/logo.png" />
+               </image>
+            </ImageView>
+            <Label id="erabiltzaileaLabel" style="-fx-text-fill: #081b26;" text="Erabiltzailea" />
+            <TextField fx:id="usernameField" maxWidth="300.0" style="-fx-background-color: #B0D9BE;" />
+            <Label id="PasahitzaLabel" style="-fx-text-fill: #081b26;" text="Pasahitza" />
+            <PasswordField fx:id="passwordField" maxWidth="300.0" style="-fx-background-color: #B0D9BE;" />
+            <Button id="loginButton" fx:id="loginButton" maxWidth="150.0" onAction="#onLoginButtonClick" style="-fx-background-color: #A62940;" text="Saioa Hasi" />
+            <Label fx:id="statusLabel" style="-fx-text-fill: red;" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
