@@ -4,14 +4,23 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="500.0" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600" prefWidth="800" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.HelloController">
    <children>
-      <Button id="loginButton" layoutX="207.0" layoutY="239.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #A62940;" text="Saioa Hasi" />
-      <Label id="erabiltzaileaLabel" alignment="CENTER" layoutX="90.0" layoutY="96.0" prefHeight="26.0" prefWidth="85.0" style="-fx-text-fill: #B0D9BE; -fx-background-color: #081b26;" text="Erabitzaliea" />
-      <Label id="PasahitzaLabel" alignment="CENTER" layoutX="90.0" layoutY="157.0" prefHeight="26.0" prefWidth="85.0" style="-fx-text-fill: #B0D9BE; -fx-background-color: #081b26;" text="Pasahitza" />
-      <TextField id="usuarioField" layoutX="226.0" layoutY="96.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #B0D9BE;" />
-      <PasswordField id="contraseñaField" layoutX="226.0" layoutY="158.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #B0D9BE;" />
+      <Button id="loginButton" fx:id="loginButton" layoutX="390.0" layoutY="301.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #A62940;" text="Saioa Hasi" />
+      <Label id="erabiltzaileaLabel" alignment="CENTER" layoutX="288.0" layoutY="157.0" prefHeight="26.0" prefWidth="85.0" style="-fx-text-fill: #B0D9BE; -fx-background-color: #081b26;" text="Erabitzaliea" />
+      <Label fx:id="welcomeText" layoutX="100" layoutY="100" />
+      <Label id="PasahitzaLabel" alignment="CENTER" layoutX="288.0" layoutY="228.0" prefHeight="26.0" prefWidth="85.0" style="-fx-text-fill: #B0D9BE; -fx-background-color: #081b26;" text="Pasahitza" />
+      <TextField fx:id="usernameField" layoutX="440.0" layoutY="157.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #B0D9BE;" />
+      <PasswordField fx:id="passwordField" layoutX="440.0" layoutY="228.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #B0D9BE;" />
+      <Label fx:id="statusLabel" alignment="CENTER" layoutX="290.0" layoutY="263.0" prefHeight="26.0" prefWidth="300.0" style="-fx-text-fill: red;" />
+      <ImageView fitHeight="200.0" fitWidth="200.0">
+         <image>
+            <Image url="@../../../img/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

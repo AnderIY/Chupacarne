@@ -13,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,10 +44,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,7 +81,8 @@
       <workItem from="1733919329368" duration="6961000" />
       <workItem from="1734005795916" duration="1845000" />
       <workItem from="1734353518123" duration="3533000" />
-      <workItem from="1734437831379" duration="5591000" />
+      <workItem from="1734437831379" duration="6517000" />
+      <workItem from="1734524084579" duration="6952000" />
     </task>
     <servers />
   </component>

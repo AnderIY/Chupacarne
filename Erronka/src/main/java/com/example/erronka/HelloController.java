@@ -21,24 +21,24 @@ public class HelloController {
 
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
-
-    @FXML
     protected void onLoginButtonClick() {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
         if (username.isEmpty() || password.isEmpty()) {
             statusLabel.setText("Por favor, completa todos los campos.");
+            System.out.println("Error: Los campos de usuario o contraseña están vacíos.");
             return;
         }
 
-
         LoginService loginService = new LoginService();
         try {
+            if (!loginService.isConnected()) {
+                statusLabel.setText("No se pudo conectar a la base de datos.");
+                System.out.println("Error: Conexión a la base de datos fallida.");
+                return;
+            }
+
             boolean isAuthenticated = loginService.verifyLogin(username, password);
             if (isAuthenticated) {
                 statusLabel.setText("¡Inicio de sesión exitoso!");

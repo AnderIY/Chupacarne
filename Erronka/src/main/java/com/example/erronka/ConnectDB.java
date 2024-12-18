@@ -75,13 +75,14 @@ public class ConnectDB {
                 connection = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/mydb",
                         "root",
-                        "1WMG23"
+                        "1WMG2023"
                 );
+                System.out.println("Conexión a la base de datos exitosa.");
             } catch (SQLException e) {
+                System.out.println("Error al conectar a la base de datos: " + e.getMessage());
                 throw new RuntimeException("Error connecting to the database", e);
             }
         }
-
         public Connection getConnection() {
             return connection;
         }
@@ -95,5 +96,9 @@ public class ConnectDB {
                 }
             }
         }
+        }
+
+
+
     }
-}
+
