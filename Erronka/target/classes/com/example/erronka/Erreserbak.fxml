@@ -12,43 +12,62 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.erronka.ErreserbakController"
+            fx:controller="com.example.erronka.Controller.ErreserbakController"
             prefHeight="500.0" prefWidth="700.0"
             style="-fx-background-color: #D9C5B4;">
 
-
+    <!-- Título -->
     <Label text="Gestión de Reservas" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #A62940;" layoutX="250" layoutY="20"/>
 
-
+    <!-- Campos de Entrada -->
     <VBox spacing="15" layoutX="50" layoutY="70">
+        <!-- Campo ID Trabajador -->
         <HBox spacing="10">
-            <Label text="Nombre:" style="-fx-text-fill: #A62940;" />
-            <TextField fx:id="nameField" promptText="Ingrese su nombre" prefWidth="200"/>
+            <Label text="ID del Trabajador:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="workerIdField" promptText="Ingrese ID del Trabajador" prefWidth="200"/>
         </HBox>
+
+        <!-- Campo ID Mesa -->
         <HBox spacing="10">
-            <Label text="Número de personas:" style="-fx-text-fill: #A62940;" />
-            <TextField fx:id="peopleField" promptText="Número de personas" prefWidth="200"/>
+            <Label text="ID de la Mesa:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="tableIdField" promptText="Ingrese ID de la Mesa" prefWidth="200"/>
         </HBox>
+
+        <!-- Campo Fecha -->
         <HBox spacing="10">
             <Label text="Fecha:" style="-fx-text-fill: #A62940;" />
             <DatePicker fx:id="dateField" prefWidth="200"/>
         </HBox>
+
+        <!-- Campo Hora -->
         <HBox spacing="10">
             <Label text="Hora:" style="-fx-text-fill: #A62940;" />
             <TextField fx:id="timeField" promptText="Hora de la reserva (HH:MM)" prefWidth="200"/>
         </HBox>
 
+        <!-- Campo DNI Cliente -->
+        <HBox spacing="10">
+            <Label text="DNI Cliente:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="clientDNIField" promptText="Ingrese DNI del Cliente" prefWidth="200"/>
+        </HBox>
 
+        <!-- Botón Hacer Reserva -->
         <Button text="Hacer Reserva" style="-fx-background-color: #A62940; -fx-text-fill: white;" layoutX="250" layoutY="230" onAction="#handleReservationAction"/>
     </VBox>
 
-
+    <!-- Tabla de Reservas -->
     <TableView fx:id="reservationsTable" layoutX="50" layoutY="300" prefWidth="600" prefHeight="150" style="-fx-background-color: white;">
         <columns>
-            <TableColumn text="Nombre" fx:id="nameColumn" prefWidth="150" style="-fx-text-fill: #A62940;"/>
-            <TableColumn text="Número de Personas" fx:id="peopleColumn" prefWidth="150" style="-fx-text-fill: #A62940;"/>
-            <TableColumn text="Fecha" fx:id="dateColumn" prefWidth="150" style="-fx-text-fill: #A62940;"/>
-            <TableColumn text="Hora" fx:id="timeColumn" prefWidth="150" style="-fx-text-fill: #A62940;"/>
+            <!-- Columna Nombre -->
+            <TableColumn text="ID Trabajador" fx:id="workerColumn" prefWidth="120" style="-fx-text-fill: #A62940;"/>
+            <!-- Columna Número de Personas -->
+            <TableColumn text="ID Mesa" fx:id="tableColumn" prefWidth="120" style="-fx-text-fill: #A62940;"/>
+            <!-- Columna Fecha -->
+            <TableColumn text="Fecha" fx:id="dateColumn" prefWidth="120" style="-fx-text-fill: #A62940;"/>
+            <!-- Columna Hora -->
+            <TableColumn text="Hora" fx:id="timeColumn" prefWidth="120" style="-fx-text-fill: #A62940;"/>
+            <!-- Columna DNI Cliente -->
+            <TableColumn text="DNI Cliente" fx:id="clientDNIColumn" prefWidth="120" style="-fx-text-fill: #A62940;"/>
         </columns>
     </TableView>
 

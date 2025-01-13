@@ -1,4 +1,4 @@
-package com.example.erronka;
+package com.example.erronka.Controller;
 
 import javafx.stage.Stage;
 

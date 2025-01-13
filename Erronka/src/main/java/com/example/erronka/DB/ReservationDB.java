@@ -1,4 +1,6 @@
-package com.example.erronka;
+package com.example.erronka.DB;
+
+import com.example.erronka.Reservation;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,9 +1,11 @@
 package com.example.erronka;
 
+import com.example.erronka.Controller.HelloController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import com.example.erronka.Controller.HelloController;
 
 import java.io.IOException;
 
@@ -13,7 +15,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         HelloController controller = fxmlLoader.getController();
-        controller.setUsingStage(stage);
+        controller.setStage(stage);
         stage.setTitle("Chupacarne");
         stage.setScene(scene);
         stage.setMaximized(true);

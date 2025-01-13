@@ -3,11 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.MainMenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.Controller.MainMenuController">
    <children>
       <Button layoutX="117.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" text="Almazena" />
       <Button layoutX="344.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" text="Langileak" />
-      <Button layoutX="117.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" text="Erreserbak" />
+      <Button layoutX="117.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onErreserbaButtonClick" text="Erreserbak" />
       <Button layoutX="344.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" text="Hornitzaileak" />
    </children>
 </AnchorPane>

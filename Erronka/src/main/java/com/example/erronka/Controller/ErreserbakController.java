@@ -1,5 +1,8 @@
-package com.example.erronka;
+package com.example.erronka.Controller;
 
+import com.example.erronka.DB.ConnectDB;
+import com.example.erronka.DB.ReservationDB;
+import com.example.erronka.Reservation;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;

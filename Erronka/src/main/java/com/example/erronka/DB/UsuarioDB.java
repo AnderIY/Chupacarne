@@ -1,4 +1,6 @@
-package com.example.erronka;
+package com.example.erronka.DB;
+
+import com.example.erronka.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +11,8 @@ public class UsuarioDB {
 
     private Connection connection;
 
-    public UsuarioDB(Connection connection) {
-        this.connection = connection;
+    public UsuarioDB() {
+        this.connection = ConnectDB.getConnection();  // Usar ConnectDB para obtener la conexión
     }
 
     public boolean verificarLogin(Usuario usuario) {

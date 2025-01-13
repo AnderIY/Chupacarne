@@ -8,4 +8,8 @@ module com.example.erronka {
 
     opens com.example.erronka to javafx.fxml;
     exports com.example.erronka;
+    exports com.example.erronka.DB;
+    opens com.example.erronka.DB to javafx.fxml;
+    exports com.example.erronka.Controller;
+    opens com.example.erronka.Controller to javafx.fxml;
 }
