@@ -4,6 +4,7 @@ module com.example.erronka {
 
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires java.desktop;
 
     opens com.example.erronka to javafx.fxml;
     exports com.example.erronka;
