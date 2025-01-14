@@ -7,27 +7,35 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneChanger {
-    /**
-     * Cambia la escena del escenario proporcionado usando el archivo FXML especificado.
-     * @param stage Escenario actual que no se cierra.
-     * @param fxmlFile Nombre del archivo FXML para cargar.
-     * @param title Título para la nueva ventana.
-     */
-    public static void cambiarVentana(Stage stage, String fxmlFile, String title) {
+
+    public static void cambiarVentana(Stage stage, String fxmlFileName, String title) {
+        if (stage == null) {
+            System.out.println("Stage is null. Cannot change window.");
+            return;
+        }
+
+        boolean wasMaximized = stage.isMaximized();
+
         try {
-            FXMLLoader loader = new FXMLLoader(SceneChanger.class.getResource("/com/example/erronka/" + fxmlFile));
-            Scene nextScene = new Scene(loader.load());
 
+            FXMLLoader loader = new FXMLLoader(SceneChanger.class.getResource("/com/example/erronka/" + fxmlFileName));
+            Scene scene = new Scene(loader.load());
 
-            Object controller = loader.getController();
-            if (controller instanceof StageAwareController) {
-                ((StageAwareController) controller).setStage(stage);
+            if (loader.getController() instanceof StageAwareController) {
+                ((StageAwareController) loader.getController()).setStage(stage);
             }
 
-            stage.setScene(nextScene);
-            stage.setTitle(title);
-            stage.centerOnScreen();
             stage.setMaximized(true);
+
+            stage.setScene(scene);
+            stage.setTitle(title);
+            stage.show();
+
+            if (wasMaximized) {
+                stage.setMaximized(true);
+            } else {
+                stage.setMaximized(false);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

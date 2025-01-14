@@ -4,20 +4,38 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-
-import static com.example.erronka.Controller.SceneChanger.cambiarVentana;
-
 public class MainMenuController implements StageAwareController {
-   @FXML
-   private JButton menuBar;
+
    private Stage stage;
 
+   @Override
    public void setStage(Stage stage) {
       this.stage = stage;
-      stage.setMaximized(true);
    }
+
    @FXML
    protected void onErreserbaButtonClick(ActionEvent event) {
-      cambiarVentana(stage,"Erreserbak.fxml","Erreserbak");
-}}
+      System.out.println("onErreserbaButtonClick called.");
+
+      if (stage == null) {
+         System.out.println("Stage is null in MainMenuController.");
+         return;
+      }
+
+
+      SceneChanger.cambiarVentana(stage, "Erreserbak.fxml", "Reservation Menu");
+   }
+
+   @FXML
+   protected void onAlmazenaButtonClick(ActionEvent event) {
+      System.out.println("onAlmazenaButtonClick called.");
+
+      if (stage == null) {
+         System.out.println("Stage is null in MainMenuController.");
+         return;
+      }
+
+
+      SceneChanger.cambiarVentana(stage, "almacen.fxml", "Product Menu");
+   }
+}

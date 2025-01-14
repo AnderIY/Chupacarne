@@ -2,8 +2,6 @@ package com.example.erronka.Controller;
 
 import com.example.erronka.DB.UsuarioDB;
 import com.example.erronka.Usuario;
-import com.example.erronka.Controller.SceneChanger;
-import com.example.erronka.Controller.StageAwareController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

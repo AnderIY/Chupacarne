@@ -10,9 +10,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 import java.sql.Connection;
 
-public class ErreserbakController {
+public class ErreserbakController implements StageAwareController {
 
     @FXML
     private TextField workerIdField;
@@ -38,6 +39,7 @@ public class ErreserbakController {
     private TableColumn<Reservation, String> clientDNIColumn;
 
     private ReservationDB reservationDB;
+    private Stage usingStage;
 
     @FXML
     public void initialize() {
@@ -56,35 +58,44 @@ public class ErreserbakController {
     @FXML
     private void handleReservationAction(ActionEvent event) {
         // Lógica para crear una nueva reserva
-        int workerId = Integer.parseInt(workerIdField.getText());  // ID del trabajador
-        int tableId = Integer.parseInt(tableIdField.getText());    // ID de la mesa
-        String date = dateField.getValue().toString();             // Fecha
-        String time = timeField.getText();                         // Hora
-        String clientDNI = clientDNIField.getText();               // DNI del cliente
+        try {
+            int workerId = Integer.parseInt(workerIdField.getText());  // ID del trabajador
+            int tableId = Integer.parseInt(tableIdField.getText());    // ID de la mesa
+            String date = dateField.getValue().toString();             // Fecha
+            String time = timeField.getText();                         // Hora
+            String clientDNI = clientDNIField.getText();               // DNI del cliente
 
-        // Validar la hora (asegurarse de que el formato es correcto: HH:mm:ss)
-        if (!time.matches("\\d{2}:\\d{2}:\\d{2}")) {
-            System.out.println("El formato de la hora es incorrecto. Debe ser HH:mm:ss.");
-            return;
+            // Validar la hora (asegurarse de que el formato es correcto: HH:mm:ss)
+            if (!time.matches("\\d{2}:\\d{2}:\\d{2}")) {
+                System.out.println("El formato de la hora es incorrecto. Debe ser HH:mm:ss.");
+                return;
+            }
+
+            // Crear una nueva instancia de Reserva
+            Reservation newReservation = new Reservation(workerId, tableId, date, time, clientDNI);
+
+            // Guardar la reserva en la base de datos
+            if (reservationDB.agregarReserva(newReservation)) {
+                // Si la reserva se guardó correctamente, agregarla a la tabla
+                reservationsTable.getItems().add(newReservation);
+
+                // Limpiar los campos después de agregar la reserva
+                workerIdField.clear();
+                tableIdField.clear();
+                dateField.setValue(null);
+                timeField.clear();
+                clientDNIField.clear();
+            } else {
+                // Si ocurrió un error, mostrar un mensaje
+                System.out.println("Error al agregar la reserva.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Por favor, ingrese valores válidos.");
         }
+    }
 
-        // Crear una nueva instancia de Reserva
-        Reservation newReservation = new Reservation(workerId, tableId, date, time, clientDNI);
-
-        // Guardar la reserva en la base de datos
-        if (reservationDB.agregarReserva(newReservation)) {
-            // Si la reserva se guardó correctamente, agregarla a la tabla
-            reservationsTable.getItems().add(newReservation);
-
-            // Limpiar los campos después de agregar la reserva
-            workerIdField.clear();
-            tableIdField.clear();
-            dateField.setValue(null);
-            timeField.clear();
-            clientDNIField.clear();
-        } else {
-            // Si ocurrió un error, mostrar un mensaje
-            System.out.println("Error al agregar la reserva.");
-        }
+    @Override
+    public void setStage(Stage stage) {
+        this.usingStage = stage;
     }
 }

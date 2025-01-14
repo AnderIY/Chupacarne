@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.erronka.Controller.AlmacenController"
+            prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-color: #D9C5B4;">
+
+    <!-- Title -->
+    <Label text="Gestión de Productos" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #A62940;" layoutX="300" layoutY="20"/>
+
+    <!-- Input Fields -->
+    <VBox spacing="15" layoutX="50" layoutY="70">
+        <!-- Product Name -->
+        <HBox spacing="10">
+            <Label text="Nombre:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="nameField" promptText="Ingrese el nombre" prefWidth="200"/>
+        </HBox>
+
+        <!-- Product Type -->
+        <HBox spacing="10">
+            <Label text="Tipo:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="typeField" promptText="Ingrese el tipo" prefWidth="200"/>
+        </HBox>
+
+        <!-- Unit of Measure -->
+        <HBox spacing="10">
+            <Label text="Unidad de Medida:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="unitField" promptText="Unidad de Medida" prefWidth="200"/>
+        </HBox>
+
+        <!-- Note -->
+        <HBox spacing="10">
+            <Label text="Nota:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="noteField" promptText="Ingrese una nota" prefWidth="200"/>
+        </HBox>
+
+        <!-- Estimated Duration -->
+        <HBox spacing="10">
+            <Label text="Duración Estimada:" style="-fx-text-fill: #A62940;" />
+            <DatePicker fx:id="durationField" prefWidth="200"/>
+        </HBox>
+
+        <!-- Quantity, Min, Max -->
+        <HBox spacing="10">
+            <Label text="Cantidad:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="quantityField" promptText="Cantidad" prefWidth="60"/>
+            <Label text="Min:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="minField" promptText="Min" prefWidth="60"/>
+            <Label text="Max:" style="-fx-text-fill: #A62940;" />
+            <TextField fx:id="maxField" promptText="Max" prefWidth="60"/>
+        </HBox>
+
+        <!-- Active Checkbox -->
+        <HBox spacing="10">
+            <Label text="Activo:" style="-fx-text-fill: #A62940;" />
+            <CheckBox fx:id="activeCheckBox" />
+        </HBox>
+
+        <Button text="Agregar Producto" style="-fx-background-color: #A62940; -fx-text-fill: white;" onAction="#handleAddProduct" />
+    </VBox>
+
+    <!-- Product Table -->
+    <TableView fx:id="productTable" layoutX="50" layoutY="400" prefWidth="700" prefHeight="150" onMouseClicked="#handleRowSelection">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+            <TableColumn text="Nombre" fx:id="nameColumn" prefWidth="150"/>
+            <TableColumn text="Tipo" fx:id="typeColumn" prefWidth="100"/>
+            <TableColumn text="Unidad de Medida" fx:id="unitColumn" prefWidth="100"/>
+            <TableColumn text="Nota" fx:id="noteColumn" prefWidth="100"/>
+            <TableColumn text="Duración Estimada" fx:id="durationColumn" prefWidth="120"/>
+            <TableColumn text="Cantidad" fx:id="quantityColumn" prefWidth="60"/>
+            <TableColumn text="Min" fx:id="minColumn" prefWidth="60"/>
+            <TableColumn text="Max" fx:id="maxColumn" prefWidth="60"/>
+            <TableColumn text="Activo" fx:id="activeColumn" prefWidth="60"/>
+        </columns>
+    </TableView>
+
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" layoutX="50" layoutY="560">
+        <Button text="Modificar" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#handleUpdateProduct" />
+        <Button text="Eliminar" style="-fx-background-color: #F44336; -fx-text-fill: white;" onAction="#handleDeleteProduct" />
+    </HBox>
+
+</AnchorPane>
