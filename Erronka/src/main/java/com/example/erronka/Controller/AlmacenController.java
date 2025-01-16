@@ -20,9 +20,21 @@ public class AlmacenController {
     @FXML
     private TableView<Producto> productTable;
     @FXML
-    private TableColumn<Producto, Integer> idColumn, quantityColumn, minColumn, maxColumn;
+    private TableColumn<Producto, Integer> idColumn;
     @FXML
-    private TableColumn<Producto, String> nameColumn, typeColumn, unitColumn, noteColumn;
+    private TableColumn<Producto, Integer> quantityColumn;
+    @FXML
+    private TableColumn<Producto, Integer> minColumn;
+    @FXML
+    private TableColumn<Producto, Integer> maxColumn;
+    @FXML
+    private TableColumn<Producto, String> nameColumn;
+    @FXML
+    private TableColumn<Producto, String> typeColumn;
+    @FXML
+    private TableColumn<Producto, String> unitColumn;
+    @FXML
+    private TableColumn<Producto, String> noteColumn;
     @FXML
     private TableColumn<Producto, LocalDate> durationColumn;
     @FXML
@@ -32,6 +44,10 @@ public class AlmacenController {
 
     @FXML
     public void initialize() {
+        if (idColumn == null || nameColumn == null || typeColumn == null || unitColumn == null || noteColumn == null || durationColumn == null || quantityColumn == null || minColumn == null || maxColumn == null || activeColumn == null) {
+            throw new IllegalStateException("FXML columns are not properly injected. Check fx:id attributes.");
+        }
+
         products.addAll(ProductoDB.getAllProducts());  // Load products from DB
         productTable.setItems(products);
 
@@ -45,13 +61,19 @@ public class AlmacenController {
         minColumn.setCellValueFactory(data -> data.getValue().minProperty().asObject());
         maxColumn.setCellValueFactory(data -> data.getValue().maxProperty().asObject());
         activeColumn.setCellValueFactory(data -> data.getValue().activoProperty().asObject());
+
+        productTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                handleRowSelection();
+            }
+        });
     }
+
 
     @FXML
     protected void handleRowSelection() {
         Producto selectedProduct = productTable.getSelectionModel().getSelectedItem();
         if (selectedProduct != null) {
-            // Cargar los datos del producto seleccionado en los campos
             nameField.setText(selectedProduct.getNombre());
             typeField.setText(selectedProduct.getTipo());
             unitField.setText(selectedProduct.getUnidadMedida());
@@ -69,14 +91,9 @@ public class AlmacenController {
         try {
             if (areFieldsValid()) {
                 Producto newProduct = createProductFromFields();
-
                 ProductoDB.insertProduct(newProduct);
-
-
                 products.clear();
                 products.addAll(ProductoDB.getAllProducts());
-
-
                 clearFields();
             } else {
                 showAlert("Input Error", "All fields must be correctly filled.");
@@ -85,8 +102,6 @@ public class AlmacenController {
             showAlert("Input Error", "Please ensure numeric fields are correctly filled.");
         }
     }
-
-
 
     @FXML
     protected void handleUpdateProduct() {

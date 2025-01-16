@@ -43,14 +43,14 @@ public class ErreserbakController implements StageAwareController {
 
     @FXML
     public void initialize() {
-        // Establecer las columnas de la tabla
+
         workerColumn.setCellValueFactory(new PropertyValueFactory<>("workerId"));
         tableColumn.setCellValueFactory(new PropertyValueFactory<>("tableId"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
         clientDNIColumn.setCellValueFactory(new PropertyValueFactory<>("clientDNI"));
 
-        // Crear la conexión a la base de datos y el objeto ReservationDB
+
         Connection connection = ConnectDB.getConnection();
         reservationDB = new ReservationDB(connection);
     }
@@ -59,11 +59,11 @@ public class ErreserbakController implements StageAwareController {
     private void handleReservationAction(ActionEvent event) {
         // Lógica para crear una nueva reserva
         try {
-            int workerId = Integer.parseInt(workerIdField.getText());  // ID del trabajador
-            int tableId = Integer.parseInt(tableIdField.getText());    // ID de la mesa
-            String date = dateField.getValue().toString();             // Fecha
-            String time = timeField.getText();                         // Hora
-            String clientDNI = clientDNIField.getText();               // DNI del cliente
+            int workerId = Integer.parseInt(workerIdField.getText());
+            int tableId = Integer.parseInt(tableIdField.getText());
+            String date = dateField.getValue().toString();
+            String time = timeField.getText();
+            String clientDNI = clientDNIField.getText();
 
             // Validar la hora (asegurarse de que el formato es correcto: HH:mm:ss)
             if (!time.matches("\\d{2}:\\d{2}:\\d{2}")) {
@@ -71,12 +71,11 @@ public class ErreserbakController implements StageAwareController {
                 return;
             }
 
-            // Crear una nueva instancia de Reserva
+
             Reservation newReservation = new Reservation(workerId, tableId, date, time, clientDNI);
 
-            // Guardar la reserva en la base de datos
             if (reservationDB.agregarReserva(newReservation)) {
-                // Si la reserva se guardó correctamente, agregarla a la tabla
+
                 reservationsTable.getItems().add(newReservation);
 
                 // Limpiar los campos después de agregar la reserva
