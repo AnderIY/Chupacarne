@@ -8,7 +8,7 @@
       <Button layoutX="117.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onAlmazenaButtonClick" text="Almazena" />
       <Button layoutX="344.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" text="Langileak" />
       <Button layoutX="117.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onErreserbaButtonClick" text="Erreserbak" />
-      <Button layoutX="344.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" text="Hornitzaileak" />
+      <Button layoutX="344.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onHornitzaileaButtonClick"  text="Hornitzaileak" />
    </children>
 </AnchorPane>
 

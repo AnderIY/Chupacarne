@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.Controller.ProveedorController">
+    <children>
+        <VBox spacing="15" layoutX="50" layoutY="50">
+            <!-- CIF Field -->
+            <HBox spacing="10">
+                <Label text="CIF:" style="-fx-text-fill: #A62940;" />
+                <TextField fx:id="cifField" promptText="CIF" prefWidth="200" />
+            </HBox>
+
+            <!-- Dirección Field -->
+            <HBox spacing="10">
+                <Label text="Dirección:" style="-fx-text-fill: #A62940;" />
+                <TextField fx:id="direccionField" promptText="Dirección" prefWidth="200" />
+            </HBox>
+
+            <!-- Kontu Korrontea Field -->
+            <HBox spacing="10">
+                <Label text="Kontu Korrontea:" style="-fx-text-fill: #A62940;" />
+                <TextField fx:id="kontuKorronteaField" promptText="Kontu Korrontea" prefWidth="200" />
+            </HBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10">
+                <Button text="Guardar" style="-fx-background-color: #A62940; -fx-text-fill: white;" onAction="#onGuardarButtonClick" />
+                <Button text="Eliminar" style="-fx-background-color: #F44336; -fx-text-fill: white;" onAction="#onEliminarButtonClick" />
+            </HBox>
+        </VBox>
+
+        <!-- Proveedores Table -->
+        <TableView fx:id="proveedorTable" layoutX="50" layoutY="350" prefWidth="700" prefHeight="150" onMouseClicked="#handleRowSelection">
+            <columns>
+                <TableColumn text="ID" fx:id="idColumn" prefWidth="50" />
+                <TableColumn text="CIF" fx:id="cifColumn" prefWidth="100" />
+                <TableColumn text="Dirección" fx:id="direccionColumn" prefWidth="200" />
+                <TableColumn text="Kontu Korrontea" fx:id="kontuKorronteaColumn" prefWidth="200" />
+
+            </columns>
+        </TableView>
+
+        <!-- Action Buttons for Table -->
+        <HBox spacing="10" layoutX="50" layoutY="520">
+            <Button text="Modificar" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#handleUpdateProveedor" />
+            <Button text="Eliminar" style="-fx-background-color: #F44336; -fx-text-fill: white;" onAction="#handleDeleteProveedor" />
+        </HBox>
+    </children>
+</AnchorPane>
