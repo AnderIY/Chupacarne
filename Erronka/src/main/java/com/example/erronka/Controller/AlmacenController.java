@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import com.example.erronka.DB.ProductoDB;
 import com.example.erronka.Producto;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
@@ -41,10 +42,20 @@ public class AlmacenController {
     private TableColumn<Producto, Boolean> activeColumn;
 
     private final ObservableList<Producto> products = FXCollections.observableArrayList();
+    @FXML
+    private Button backButton;
+
+    @FXML
+    public void handleBackButton() {
+        Stage currentStage = (Stage) backButton.getScene().getWindow();
+        BaseController.navigateToMainMenu(currentStage);
+    }
 
     @FXML
     public void initialize() {
-        if (idColumn == null || nameColumn == null || typeColumn == null || unitColumn == null || noteColumn == null || durationColumn == null || quantityColumn == null || minColumn == null || maxColumn == null || activeColumn == null) {
+        if (idColumn == null || nameColumn == null || typeColumn == null || unitColumn == null ||
+                noteColumn == null || durationColumn == null || quantityColumn == null ||
+                minColumn == null || maxColumn == null || activeColumn == null) {
             throw new IllegalStateException("FXML columns are not properly injected. Check fx:id attributes.");
         }
 
@@ -68,7 +79,6 @@ public class AlmacenController {
             }
         });
     }
-
 
     @FXML
     protected void handleRowSelection() {

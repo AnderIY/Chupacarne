@@ -22,7 +22,7 @@
             <TextField fx:id="usernameField" maxWidth="300.0" style="-fx-background-color: #B0D9BE;" />
             <Label id="PasahitzaLabel" style="-fx-text-fill: #081b26;" text="Pasahitza" />
             <PasswordField fx:id="passwordField" maxWidth="300.0" style="-fx-background-color: #B0D9BE;" />
-            <Button id="loginButton" fx:id="loginButton" maxWidth="150.0" onAction="#onLoginButtonClick" style="-fx-background-color: #A62940;" text="Saioa Hasi" />
+            <Button id="loginButton" fx:id="loginButton" maxWidth="150.0" onAction="#onLoginButtonClick" style="-fx-background-color: #A62940;-fx-text-fill: #ffffff;" text="Saioa Hasi" />
             <Label fx:id="statusLabel" style="-fx-text-fill: red;" />
          </children>
       </VBox>

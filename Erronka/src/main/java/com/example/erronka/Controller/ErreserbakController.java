@@ -4,14 +4,13 @@ import com.example.erronka.DB.ConnectDB;
 import com.example.erronka.DB.ReservationDB;
 import com.example.erronka.Reservation;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import java.sql.Connection;
+import static com.example.erronka.Controller.BaseController.navigateToMainMenu;
+
 
 public class ErreserbakController implements StageAwareController {
 
@@ -40,7 +39,14 @@ public class ErreserbakController implements StageAwareController {
 
     private ReservationDB reservationDB;
     private Stage usingStage;
+    @FXML
+    private Button backButton;
 
+    @FXML
+    public void handleBackButton() {
+        Stage currentStage = (Stage) backButton.getScene().getWindow();
+        BaseController.navigateToMainMenu(currentStage);
+    }
     @FXML
     public void initialize() {
 

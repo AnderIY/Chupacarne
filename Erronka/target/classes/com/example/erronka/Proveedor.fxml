@@ -5,13 +5,14 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.Controller.ProveedorController">
     <children>
         <VBox spacing="15" layoutX="50" layoutY="50">
-            <!-- CIF Field -->
+
             <HBox spacing="10">
                 <Label text="CIF:" style="-fx-text-fill: #A62940;" />
                 <TextField fx:id="cifField" promptText="CIF" prefWidth="200" />
             </HBox>
 
-            <!-- Dirección Field -->
+            <Button layoutX="10" layoutY="10" text="Volver" onAction="#handleBackButton" style="-fx-background-color: #A62940; -fx-text-fill: white;" fx:id="backButton" />
+
             <HBox spacing="10">
                 <Label text="Dirección:" style="-fx-text-fill: #A62940;" />
                 <TextField fx:id="direccionField" promptText="Dirección" prefWidth="200" />

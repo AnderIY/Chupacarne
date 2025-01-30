@@ -10,6 +10,7 @@
                 <Label text="DNI:" style="-fx-text-fill: #A62940;" />
                 <TextField fx:id="dniField" promptText="DNI" prefWidth="200" />
             </HBox>
+            <Button layoutX="10" layoutY="10" text="Volver" onAction="#handleBackButton" style="-fx-background-color: #A62940; -fx-text-fill: white;" fx:id="backButton" />
 
             <!-- Nombre Field -->
             <HBox spacing="10">

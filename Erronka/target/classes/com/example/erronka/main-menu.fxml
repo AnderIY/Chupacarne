@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
+   <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D9C5B4;" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.Controller.MainMenuController">
-   <children>
-      <Button layoutX="117.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onAlmazenaButtonClick" text="Almazena" />
-      <Button layoutX="344.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onLangileaButtonClick" text="Langileak" />
-      <Button layoutX="117.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onErreserbaButtonClick" text="Erreserbak" />
-      <Button layoutX="344.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" style="-fx-background-color: A62940;" onAction="#onHornitzaileaButtonClick"  text="Hornitzaileak" />
-   </children>
-</AnchorPane>
+   <AnchorPane fx:id="mainMenuPane" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erronka.Controller.MainMenuController"
+               prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #D9C5B4;">
+      <children>
+
+         <Button layoutX="117.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" text="Almazena" onAction="#onAlmazenaButtonClick"
+                 style="-fx-background-color: #A62940; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
+
+         <Button layoutX="344.0" layoutY="73.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" text="Langileak" onAction="#onLangileaButtonClick"
+                 style="-fx-background-color: #A62940; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
 
 
+         <Button layoutX="117.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" text="Erreserbak" onAction="#onErreserbaButtonClick"
+                 style="-fx-background-color: #A62940; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
+
+
+         <Button layoutX="344.0" layoutY="250.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" text="Hornitzaileak" onAction="#onHornitzaileaButtonClick"
+                 style="-fx-background-color: #A62940; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
+
+         <Button layoutX="230.0" layoutY="350.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="126.0" text="Chat" onAction="#onChatButtonClick"
+                 style="-fx-background-color: #A62940; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
+      </children>
+   </AnchorPane>

@@ -12,6 +12,7 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.erronka.Controller.AlmacenController"
             style="-fx-background-color: #D9C5B4;">
+    <Button layoutX="10" layoutY="10" text="Volver" onAction="#handleBackButton" style="-fx-background-color: #A62940; -fx-text-fill: white;" fx:id="backButton" />
 
     <!-- Header Label -->
     <Label text="Gestión de Productos" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #A62940;"

@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 public class ProveedorController {
 
@@ -38,7 +39,14 @@ public class ProveedorController {
     private TableColumn<Proveedor, Boolean> activoColumn;
 
     private final ObservableList<Proveedor> proveedorList = FXCollections.observableArrayList();
+    @FXML
+    private Button backButton;
 
+    @FXML
+    public void handleBackButton() {
+        Stage currentStage = (Stage) backButton.getScene().getWindow();
+        BaseController.navigateToMainMenu(currentStage);
+    }
     @FXML
     private void initialize() {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());

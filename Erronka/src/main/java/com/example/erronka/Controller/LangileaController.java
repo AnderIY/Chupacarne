@@ -7,8 +7,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
-public class LangileaController {
+public class LangileaController implements StageAwareController{
 
     @FXML
     private TextField dniField;
@@ -41,6 +43,21 @@ public class LangileaController {
     private TableColumn<Langilea, String> apellido2Column;
 
     private final ObservableList<Langilea> langileaList = FXCollections.observableArrayList();
+    @FXML
+    private Button backButton;
+    private Stage stage;
+    @FXML
+    private AnchorPane langileaPane;
+    @Override
+    public void setStage(Stage stage) {
+        this.stage = stage;
+        BaseController.maximizeWindow(stage);  // Maximiza la ventana
+        BaseController.adjustToScreenResolution(stage, langileaPane);  // Ajusta el contenido
+    }
+    @FXML
+    public void handleBackButton() {
+        BaseController.navigateToMainMenu((Stage) backButton.getScene().getWindow());
+    }
 
     @FXML
     private void initialize() {
